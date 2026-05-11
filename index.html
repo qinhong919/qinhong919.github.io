@@ -2,34 +2,161 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>老道个人主页</title>
+  <title>老道 · 个人主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="传统文化从业者：以经典为骨，以当下为用。">
   <style>
-    body{font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:0;padding:24px;}
-    h1{margin-top:0;}
-    section{margin-top:24px;}
-    a{color:#0366d6;text-decoration:none;}
-    a:hover{text-decoration:underline;}
+    :root {
+      --bg:#f7f5f1;
+      --ink:#111;
+      --muted:#5b5b5b;
+      --card:#fff;
+      --line:#e5e1da;
+      --accent:#2f5e4e;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.75;
+      color:var(--ink);
+      background: linear-gradient(180deg,#faf7f0 0%,#f2efe6 100%);
+    }
+
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    .wrap { width:min(1020px,calc(100% - 40px)); margin:0 auto; }
+
+    .topbar {
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+
+    .topbar .inner {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+
+    .brand { font-weight:700; letter-spacing:.06em; }
+
+    .nav { display:flex; gap:18px; font-size:14px; }
+
+    .hero { padding:60px 0 40px 0; }
+    .hero h1 { margin:0; font-size:40px; line-height:1.1; }
+    .hero .tagline { margin:12px 0 0; color:var(--muted); }
+    .hero .meta { margin:10px 0 0; font-size:14px; color:var(--muted); }
+
+    .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; margin-top:28px; }
+
+    .card {
+      grid-column:span 4;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+    }
+
+    .card h3 { margin:0 0 8px 0; font-size:18px; }
+    .card p { margin:0; color:var(--muted); font-size:14px; }
+
+    @media (max-width: 900px) {
+      .hero { padding-top:40px; }
+      .hero h1 { font-size:34px; }
+      .card { grid-column:span 12; }
+      .nav { display:none; }
+    }
+
+    .section { padding:40px 0; border-top:1px solid var(--line); }
+    .section h2 { margin:0 0 14px 0; font-size:22px; }
+    .section p { margin:0 0 10px 0; }
+
+    .footer {
+      padding:26px 0;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+      border-top:1px solid var(--line);
+    }
   </style>
 </head>
 <body>
-  <h1>老道</h1>
-  <p>传统文化从业者、专注力与静心训练、周易与状态研究</p>
+  <header class="topbar">
+    <div class="wrap inner">
+      <div class="brand">老道</div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#about">关于我</a>
+        <a href="#work">作品</a>
+        <a href="#teaching">课程</a>
+        <a href="#journal">随笔</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+  </header>
 
-  <section>
-    <h2>快速入口</h2>
-    <ul>
-      <li><a href="https://github.com/qinhong919">GitHub</a></li>
-    </ul>
-  </section>
+  <main class="wrap">
+    <section class="hero">
+      <h1>让传统文化落到生活里</h1>
+      <p class="tagline">传统文化从业者：以经典为骨，以当下为用。</p>
+      <p class="meta">专注：静心训练、状态管理、周易与中式智慧</p>
 
-  <section>
-    <h2>写给第一次来的人</h2>
-    <p>这里先开个门，让你看到我。内容会陆续放进来。</p>
-  </section>
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <h3>当下状态</h3>
+          <p>做减法，把感受和节奏收回来。</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>方法</h3>
+          <p>长期主义、勤复盘、少口号，多落实。</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>写作</h3>
+          <p>短句先到位，再说理由。</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p style="color:#666">本站托管于 GitHub Pages</p>
+    <section id="about" class="section">
+      <h2>关于我</h2>
+      <p>我不做“看起来很文化”的摆设。更关心你怎么用：一是把心稳住，二是把事做出来。</p>
+      <p>不追求神秘感。追求可重复、可落地的路径。</p>
+    </section>
+
+    <section id="work" class="section">
+      <h2>作品与项目</h2>
+      <p>放这里，给你一个清晰入口。三类：内容、方法、工具。</p>
+      <p><a href="https://github.com/qinhong919">GitHub 仓库</a>（正在整理）</p>
+    </section>
+
+    <section id="teaching" class="section">
+      <h2>课程与带练</h2>
+      <p>讲清原则，只做必要动作。课程安排会以清单形式更新在主页。</p>
+      <p>若你也想把传统智慧用到生活中，先从每天10分钟开始。</p>
+    </section>
+
+    <section id="journal" class="section">
+      <h2>每日随笔</h2>
+      <p>短句记录，反复回看。更新按节奏来，不内耗。</p>
+      <p>下一步：把第一篇发上来。</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>联系与合作</h2>
+      <p>合作方式：先聊清楚目标，再敲细节。</p>
+      <p>暂时不公开联系方式；你可以通过 GitHub 留言或 issue。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>本站托管于 GitHub Pages · 最后更新：2026-05-11</div>
   </footer>
 </body>
 </html>
