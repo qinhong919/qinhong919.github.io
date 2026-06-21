@@ -489,7 +489,7 @@ blockquote cite {
 }
 
 .qr-card img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .qr-card div {
@@ -656,7 +656,7 @@ blockquote cite {
   }
 
   .hero-portrait img {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 5;
   }
 
   .portrait-caption {
@@ -690,7 +690,9 @@ blockquote cite {
   }
 
   .image-paper img {
-    max-height: 360px;
+    aspect-ratio: auto;
+    height: auto;
+    max-height: none;
     object-position: center 20%;
   }
 
