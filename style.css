@@ -530,21 +530,38 @@ blockquote cite {
 
 @media (max-width: 780px) {
   .nav {
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 16px;
   }
 
   .nav-toggle {
     display: inline-flex;
+    min-height: 38px;
+    padding: 0 14px;
   }
 
   .nav-links {
     display: none;
     flex-basis: 100%;
-    justify-content: flex-start;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    justify-content: stretch;
+    padding-top: 6px;
   }
 
   .nav-links.is-open {
+    display: grid;
+  }
+
+  .nav-links a {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 6px 10px;
+    text-align: center;
   }
 
   .section-band,
@@ -554,6 +571,7 @@ blockquote cite {
 
   .hero {
     min-height: auto;
+    gap: 28px;
   }
 
   .feature-grid,
@@ -573,5 +591,148 @@ blockquote cite {
 
   .contact-copy {
     padding: 24px 24px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    line-height: 1.68;
+    background-size: 28px 28px, 28px 28px, 100% 620px, 100% 620px, auto;
+  }
+
+  .brand {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+  }
+
+  .section-band,
+  .section {
+    padding: 42px 14px;
+  }
+
+  .hero {
+    padding-top: 34px;
+  }
+
+  h1 {
+    font-size: clamp(44px, 17vw, 68px);
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .slogan {
+    margin: 16px 0 10px;
+    font-size: 27px;
+  }
+
+  .hero-text {
+    margin: 10px 0;
+    font-size: 17px;
+  }
+
+  .actions,
+  .soft-cta {
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .hero-portrait {
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 12px;
+  }
+
+  .hero-portrait img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .portrait-caption {
+    display: grid;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .split,
+  .feature,
+  .contact-section {
+    gap: 18px;
+  }
+
+  .prose,
+  .paper,
+  .timeline,
+  .course-card,
+  .article-list article,
+  blockquote {
+    padding: 18px;
+  }
+
+  .inline-photo img {
+    width: 100%;
+  }
+
+  .feature-heading p,
+  blockquote p {
+    font-size: 17px;
+  }
+
+  .image-paper img {
+    max-height: 360px;
+    object-position: center 20%;
+  }
+
+  .soft-cta {
+    padding: 16px;
+  }
+
+  .contact-copy {
+    padding: 18px 18px 0;
+  }
+
+  .qr-grid {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .qr-card {
+    padding: 16px;
+  }
+
+  .qr-card img,
+  .qr-card div {
+    width: min(70vw, 180px);
+    height: min(70vw, 180px);
+  }
+
+  .footer {
+    padding: 28px 14px 42px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-links {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .slogan {
+    font-size: 24px;
   }
 }
