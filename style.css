@@ -342,7 +342,7 @@ blockquote p,
 
 .image-paper {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 140px minmax(0, 1fr);
   gap: 18px;
   align-items: center;
 }
@@ -350,7 +350,7 @@ blockquote p,
 .image-paper img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 188px;
   object-fit: cover;
   object-position: center 18%;
   border: 1px solid rgba(199, 163, 90, 0.28);
