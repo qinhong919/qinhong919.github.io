@@ -11,4 +11,5 @@
 - `script.js`：移动端导航交互。
 - `assets/laodao-*.jpg`：网页展示照片，已压缩为适合移动端加载的版本。
 - `assets/wechat-qrcode.jpg`：联系二维码。
+- `assets/video-account-qrcode.jpg`：公众号 / 视频号二维码。
 道可道也，非常道也
