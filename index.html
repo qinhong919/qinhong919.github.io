@@ -1,102 +1,185 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>专注力与觉性实修营</title>
-<style>
-:root { --bg:#101820; --ink:#f6efd8; --gold:#c9a65a; --green:#aee6dc; --muted:#b6c8c4; --card:#162b35; }
-* { box-sizing:border-box; }
-body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif; background: radial-gradient(circle at 80% 10%, #3b3422 0, transparent 32%), linear-gradient(180deg,#101820,#172b36 60%,#102228); color:var(--ink); line-height:1.75; }
-.wrap { max-width:1060px; margin:0 auto; padding:28px 20px 72px; }
-.hero { min-height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; border:1px solid rgba(201,166,90,.65); border-radius:28px; padding:54px 24px; margin-top:24px; background:rgba(12,26,34,.72); box-shadow:0 30px 80px rgba(0,0,0,.32); }
-.tag { display:inline-block; background:var(--gold); color:#101820; border-radius:999px; padding:8px 22px; font-weight:700; letter-spacing:.06em; }
-h1 { font-size:clamp(48px, 9vw, 96px); line-height:1.14; margin:32px 0 18px; font-family:"Noto Serif SC","Songti SC",serif; letter-spacing:.06em; }
-.subtitle { font-size:clamp(20px,3.6vw,32px); color:#dcc78f; margin-bottom:34px; }
-.slogan { font-size:clamp(24px,4vw,42px); font-weight:700; color:#fff; margin:18px auto; }
-.desc { max-width:760px; color:#d7ebe8; font-size:20px; }
-.cta { margin-top:34px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
-.btn { padding:14px 28px; border-radius:999px; text-decoration:none; font-weight:700; }
-.btn.primary { background:var(--gold); color:#101820; }
-.btn.ghost { border:1px solid var(--gold); color:var(--ink); }
-.section { margin-top:42px; }
-.section h2 { font-family:"Noto Serif SC",serif; font-size:34px; color:#f7e7b6; margin:0 0 20px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
-.card { background:rgba(22,43,53,.9); border:1px solid rgba(201,166,90,.35); border-radius:20px; padding:24px; }
-.card h3 { margin-top:0; color:#fff1c7; }
-ul { padding-left:1.2em; }
-.timeline .item { display:grid; grid-template-columns:130px 1fr; gap:18px; border-left:2px solid var(--gold); padding:0 0 28px 24px; margin-left:8px; }
-.timeline .time { color:var(--gold); font-weight:700; }
-.notice { color:#bfd4d1; font-size:15px; border-top:1px solid rgba(201,166,90,.35); margin-top:48px; padding-top:24px; }
-.footer { text-align:center; color:#d7c48c; margin-top:60px; }
-@media (max-width:640px) { .timeline .item { grid-template-columns:1fr; } h1 { letter-spacing:.02em; } }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="老道覃宏个人主页：收神记课程、孙储琳老师人体科学研究、传统文化与身心训练实践。" />
+  <title>老道覃宏个人主页</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="wrap">
-  <section class="hero">
-    <div class="tag">8月1日—2日 · 昆明</div>
-    <h1>专注力与觉性<br>实修营</h1>
-    <div class="subtitle">收神定心｜坐功内观｜河车搬运｜潜能训练</div>
-    <div class="slogan">把散乱的心神收回来</div>
-    <p class="desc">两天现场带练，帮助学员从身、息、心、意、气几个层面，逐步进入稳定、清明、专注、有力量的状态。</p>
-    <div class="cta"><a class="btn primary" href="#course">查看课程内容</a><a class="btn ghost" href="#signup">咨询报名</a></div>
-  </section>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#top">老道覃宏</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks">菜单</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">个人介绍</a>
+        <a href="#work">工作展示</a>
+        <a href="#courses">课程体系</a>
+        <a href="#videos">视频内容</a>
+        <a href="#contact">联系咨询</a>
+      </div>
+    </nav>
+  </header>
 
-  <section class="section">
-    <h2>你不是缺方法，是还没有进入状态</h2>
-    <div class="grid">
-      <div class="card">想专注，专注不了。想安静，安静不下来。</div>
-      <div class="card">身体很累，脑子却在睡前停不下来。</div>
-      <div class="card">练功越练越急，意念越用力越散。</div>
-      <div class="card">孩子坐不住，大人也定不下来。</div>
-    </div>
-  </section>
+  <main id="top">
+    <section class="hero section-band">
+      <div class="hero-copy">
+        <p class="eyebrow">Traditional Culture / Mindful Practice</p>
+        <h1>从身体和呼吸开始，<br>重建稳定的内在秩序。</h1>
+        <p class="hero-text">
+          我是覃宏，长期整理和实践传统文化、身心训练与人体科学相关内容。这个主页用于集中展示我的研究方向、课程体系、视频内容与咨询入口。
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#contact">微信咨询</a>
+          <a class="button" href="#work">查看工作展示</a>
+        </div>
+      </div>
+      <aside class="portrait-card" aria-label="覃宏照片">
+        <img src="assets/laodao-seated.jpg" alt="老道覃宏照片" />
+        <div class="portrait-meta">
+          <strong>老道覃宏</strong>
+          <span>传统文化与身心训练实践者</span>
+        </div>
+      </aside>
+    </section>
 
-  <section class="section" id="course">
-    <h2>课程内容</h2>
-    <div class="grid">
-      <div class="card"><h3>基础筑基</h3><p>动功筑基、坐功入静、身体扫描、三秒回收法、收功归元。</p></div>
-      <div class="card"><h3>觉性实修</h3><p>天目内观、觉知训练、入静入定区别、丹田轻守、呼气下沉。</p></div>
-      <div class="card"><h3>传统特色</h3><p>开剑指训练、金光神咒实修、河车搬运基础、掌心感气、基础采气。</p></div>
-      <div class="card"><h3>落地应用</h3><p>亲子收心、睡前收神、焦虑时稳定、21天个人练习方案。</p></div>
-    </div>
-  </section>
+    <section class="section split" id="about">
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h2>个人介绍</h2>
+      </div>
+      <div class="panel prose">
+        <p>
+          我的工作重点，是把传统修身方法、现代人的身心困境和可执行的日常训练连接起来。内容不追求玄虚表达，而是尽量回到身体、呼吸、注意力、觉察和稳定状态本身。
+        </p>
+        <p>
+          当前主要方向包括：收神记课程体系、专注力与觉性训练、传统文化资料整理、人体科学历史案例研究，以及面向普通人的身心实践路径设计。
+        </p>
+      </div>
+    </section>
 
-  <section class="section timeline">
-    <h2>两天流程</h2>
-    <div class="item"><div class="time">第一天上午</div><div><b>专注力与觉性实修到底练什么</b><br>讲清潜能、专注力、觉知力与身心状态训练的关系。</div></div>
-    <div class="item"><div class="time">第一天下午</div><div><b>动静筑基</b><br>动功、坐功、天目内观，让身体先稳下来。</div></div>
-    <div class="item"><div class="time">第一天晚上</div><div><b>收神坐功</b><br>不追神秘感觉，只练神归身中、身稳息匀。</div></div>
-    <div class="item"><div class="time">第二天上午</div><div><b>觉知、入静与河车搬运基础</b><br>丹田聚气、掌心感气、呼气下沉，理解内炼升降与归元。</div></div>
-    <div class="item"><div class="time">第二天下午</div><div><b>开剑指、金光神咒与意念聚焦</b><br>训练方向感、对象感、意念稳定，并制定21天练习方案。</div></div>
-  </section>
+    <section class="section" id="work">
+      <div class="section-head">
+        <p class="eyebrow">WORK</p>
+        <h2>工作展示</h2>
+        <p class="muted">这里放的是当前最核心的研究、整理和教学工作，后续可以继续扩展为专题页面。</p>
+      </div>
+      <div class="work-grid">
+        <article class="work-card featured">
+          <span class="label">研究专题</span>
+          <h3>孙储琳老师人体科学研究</h3>
+          <p>
+            围绕《我所看到的那一部分世界》建立资料整理、实验项目总表、理论推论摘编、练功方法摘录和教材化总纲。
+          </p>
+          <ul>
+            <li>全文抽取与主题索引</li>
+            <li>功能现象、实验记录与可疑点整理</li>
+            <li>科学家理论级推论与教学转化</li>
+          </ul>
+        </article>
+        <article class="work-card">
+          <span class="label">课程产品</span>
+          <h3>收神记</h3>
+          <p>面向现代人的收心、定神、稳定身心训练，重点解决心散、焦虑、注意力不稳、长期内耗等问题。</p>
+        </article>
+        <article class="work-card">
+          <span class="label">资料整理</span>
+          <h3>传统文化专题库</h3>
+          <p>持续整理祝由、遁术、身心训练、内观修持等资料，形成可检索、可复用、可教学化的本地资料体系。</p>
+        </article>
+        <article class="work-card">
+          <span class="label">内容传播</span>
+          <h3>视频与文章</h3>
+          <p>围绕身心成长、传统文化、课程答疑和研究札记制作短视频、B站内容与公众号文章。</p>
+        </article>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>适合人群</h2>
-    <div class="card">
-      <ul>
-        <li>长期心散、焦虑、睡前停不下来的人</li>
-        <li>想提升专注力、觉知力、稳定力的人</li>
-        <li>对坐功、内观、金光神咒、剑指、气感训练感兴趣的人</li>
-        <li>想带孩子做专注力训练、亲子收心的家长</li>
-        <li>对水遁术、传统潜能训练和内丹修炼感兴趣，但希望先从基础入手的人</li>
-      </ul>
-    </div>
-  </section>
+    <section class="section split" id="courses">
+      <div>
+        <p class="eyebrow">COURSES</p>
+        <h2>课程体系</h2>
+      </div>
+      <div class="course-stack">
+        <article class="course-item">
+          <div class="course-index">01</div>
+          <div>
+            <h3>收神记基础课</h3>
+            <p>从身、息、心入手，建立收心、回神、稳定注意力的基础方法。</p>
+          </div>
+        </article>
+        <article class="course-item">
+          <div class="course-index">02</div>
+          <div>
+            <h3>90分钟企业家闭门体验沙龙</h3>
+            <p>适合高压、高决策密度人群，帮助参与者体验快速回到稳定状态的训练路径。</p>
+          </div>
+        </article>
+        <article class="course-item">
+          <div class="course-index">03</div>
+          <div>
+            <h3>21天行动手册</h3>
+            <p>把现场体验转化为日常训练，用固定流程帮助身体和注意力形成新的稳定习惯。</p>
+          </div>
+        </article>
+        <article class="course-item">
+          <div class="course-index">04</div>
+          <div>
+            <h3>课程产品与转化方案</h3>
+            <p>用于线下课、闭门沙龙、线上内容与社群训练的整体课程产品设计。</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <section class="section" id="signup">
-    <h2>咨询报名</h2>
-    <div class="card">
-      <p><b>课程时间：</b>2026年8月1日—2日</p>
-      <p><b>课程地点：</b>昆明</p>
-      <p><b>咨询方式：</b>微信联系主办方 / 老道文化空间</p>
-      <p><b>核心金句：</b>身稳，心明，气顺，觉性自然显发。</p>
-    </div>
-  </section>
+    <section class="section video-section" id="videos">
+      <div class="section-head">
+        <p class="eyebrow">VIDEOS</p>
+        <h2>视频内容</h2>
+        <p class="muted">后续上传到 B站 的课程片段、研究分享和练习说明，可以继续放在这里。</p>
+      </div>
+      <div class="video-card">
+        <div class="video-frame">
+          <iframe
+            src="https://player.bilibili.com/player.html?isOutside=true&bvid=BV1Ts7A6vEZb&p=1"
+            title="老道覃宏 B站视频"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-copy">
+          <h3>B站视频入口</h3>
+          <p>这里已经接入一个 B站视频。以后你只要把新视频的 BV 号给我，就可以继续增加到主页。</p>
+          <a class="button" href="https://www.bilibili.com/video/BV1Ts7A6vEZb/" target="_blank" rel="noopener">打开 B站观看</a>
+        </div>
+      </div>
+    </section>
 
-  <p class="notice">边界说明：本课程为传统文化与身心训练体验，不替代医学诊疗，不承诺治疗疾病，不承诺人人当场出现特殊能力。课程重点是现场带练、建立状态、提升专注、稳定身心、学会收功与避免走偏。</p>
-  <div class="footer">专注力与觉性实修营 · 昆明</div>
-</div>
+    <section class="section contact-section" id="contact">
+      <div>
+        <p class="eyebrow">CONTACT</p>
+        <h2>联系咨询</h2>
+        <p class="muted">课程咨询、内容合作、线下课程和研究交流，可通过微信联系。</p>
+      </div>
+      <div class="qr-grid">
+        <article class="qr-card">
+          <img src="assets/wechat-qrcode.jpg" alt="微信二维码" />
+          <h3>微信咨询</h3>
+          <p>扫码添加微信，咨询课程安排与合作事宜。</p>
+        </article>
+        <article class="qr-card">
+          <img src="assets/video-account-qrcode.jpg" alt="视频号二维码" />
+          <h3>视频号 / 内容号</h3>
+          <p>扫码查看短视频内容与后续更新。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>老道覃宏个人主页 · 传统文化与身心训练</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
