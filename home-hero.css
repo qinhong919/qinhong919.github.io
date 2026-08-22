@@ -1,0 +1,60 @@
+.hero.hero--banner{
+  position:relative;
+  display:block;
+  min-height:650px;
+  padding:0;
+  isolation:isolate;
+}
+
+.hero--banner .hero-portrait{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  width:100%;
+  max-width:none;
+  margin:0;
+}
+
+.hero--banner .hero-portrait img{
+  width:100%;
+  height:100%;
+  max-height:none;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.82) contrast(.96);
+}
+
+.hero--banner .hero-portrait::after{
+  position:absolute;
+  inset:0;
+  content:"";
+  background:linear-gradient(90deg,rgba(245,241,232,.22) 0%,rgba(245,241,232,.06) 48%,rgba(30,41,37,.08) 100%);
+}
+
+.hero--banner .portrait-aura,
+.hero--banner figcaption{display:none}
+
+.hero--banner .hero-copy{
+  width:min(52%,560px);
+  padding:132px 0 82px;
+}
+
+@media(max-width:760px){
+  .hero.hero--banner{
+    display:flex;
+    min-height:auto;
+    flex-direction:column;
+    gap:30px;
+    padding:58px 0 45px;
+  }
+  .hero--banner .hero-copy{width:100%;padding:0}
+  .hero--banner .hero-portrait{
+    position:relative;
+    inset:auto;
+    z-index:0;
+    width:100%;
+    height:280px;
+  }
+  .hero--banner .hero-portrait img{object-position:66% center}
+  .hero--banner .hero-portrait::after{background:linear-gradient(90deg,rgba(245,241,232,.08),rgba(30,41,37,.08))}
+}

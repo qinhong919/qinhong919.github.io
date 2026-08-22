@@ -1,0 +1,7 @@
+.DS_Store
+**/.DS_Store
+._*
+content-private/
+deployment/
+assets/README.md
+assets/**/README.md

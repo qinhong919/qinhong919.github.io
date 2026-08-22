@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "kicker": "东方生命文化探索者｜专注力与生命状态观察方向",
+    "title": "在信息时代，重新安放注意。",
+    "lead": "以现代注意力资料为参考，以东方传统为文化资源，持续讨论专注、生命状态与日常生活之间的关系。",
+    "portrait": "../assets/p/hero/laodao-upright-v4.png"
+  },
+  "featured_articles": [
+    "why-modern-people-cannot-settle",
+    "shoushen-is-returning",
+    "body-mind-and-rhythm"
+  ],
+  "timeline": {
+    "empty_message": "人物年表正在依据公开资料逐项核验，确认后持续补充。"
+  },
+  "unknown_observation": {
+    "title": "未知观察资料整理",
+    "description": "用于整理公开资料与待观察问题；不代表最终结论。",
+    "href": "observations/?category=观察方法与未知观察",
+    "note": "公开内容正在整理"
+  }
+}
