@@ -12,6 +12,26 @@
 <section id="app" aria-live="polite"></section>
 <footer>祝眠是睡眠习惯辅助工具，不替代医疗诊断或专业帮助。</footer>
 </main>
-<script src="triage.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qinhong919/qinhong919.github.io@e09aee2b52b59897b8933c827ebf51d97ba4e7ce/zhumian/triage.js"></script>
+<script>
+(function () {
+  var oldHome = home;
+  home = function () {
+    if (state.result && (state.nights || []).length >= 7) {
+      showVerdict();
+      return;
+    }
+    oldHome();
+  };
+  var oldSave = saveLog;
+  saveLog = function () {
+    if ((state.nights || []).length >= 7) {
+      showVerdict();
+      return;
+    }
+    oldSave();
+  };
+})();
+</script>
 </body>
 </html>
