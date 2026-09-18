@@ -14,43 +14,14 @@
 </main>
 <script src="https://cdn.jsdelivr.net/gh/qinhong919/qinhong919.github.io@e09aee2b52b59897b8933c827ebf51d97ba4e7ce/zhumian/triage.js"></script>
 <script>
-(function () {
-  result = function () {
-    var m = state.result || decide(state.a);
-    state.result = m;
-    save();
-    if (!silent(m, state.a)) goPlay();
-    else quiet();
-  };
-  var oldQuiet = quiet;
-  quiet = function () {
-    var pack = COPY[state.result] || ["\u4eca\u665a\u4e0d\u542f\u52a8\u97f3\u9891", "", false];
-    var p1 = state.a && state.a.apnea === "yes";
-    progress.textContent = "\u8fdb\u884c\u4e2d";
-    app.innerHTML = '<div class="result"><div class="tag">\u4eca\u665a\u65b9\u6848\u5df2\u5f00\u59cb</div><h2>' + pack[0] + "</h2>" +
-      (p1 ? '<div class="warning">\u5b89\u5168\u63d0\u793a\u4fdd\u6301\u6709\u6548\u3002\u4e0d\u63d0\u4f9b\u7528\u58f0\u97f3\u76d6\u4f4f\u9f3e\u58f0\u3002</div>' : "") +
-      "<p>" + pack[1] + "</p><p class=\"small\">\u4eca\u665a\u4e0d\u653e\u97f3\u3002\u628a\u5c4f\u5e55\u6263\u4e0a\u5373\u53ef\u3002\u65e9\u4e0a\u518d\u8bb0\u4e09\u9879\u3002</p>" +
-      '<button class="button" id="stop">\u7ed3\u675f\u4eca\u665a</button></div>';
-    document.querySelector("#stop").onclick = home;
-  };
-  var oldHome = home;
-  home = function () {
-    if (state.result && (state.nights || []).length >= 7) {
-      showVerdict();
-      return;
-    }
-    oldHome();
-  };
-  var oldSave = saveLog;
-  saveLog = function () {
-    if ((state.nights || []).length >= 7) {
-      showVerdict();
-      return;
-    }
-    oldSave();
-  };
-  home();
-})();
+function markStarted(){state.startedAt=new Date().toISOString();state.trialStatus="active";state.triageCompleted=true;save();}
+function daily(){stopSound();progress.textContent="";var pack=COPY[state.result]||["\u4eca\u665a\u65b9\u6848","",true];var quietPath=state.verdict==="stop"||silent(state.result,state.a);var n=(state.nights||[]).length;var h='<div class="single"><div class="eyebrow">\u4eca\u665a\u7684\u65b9\u6848</div><h1>'+pack[0]+'</h1>';h+=n>0?'<p class="lead">\u5df2\u7ecf\u8fdb\u884c '+n+' / 7 \u665a</p>':'<p class="lead">\u4eca\u665a\u5148\u505a\u8fd9\u4e00\u4ef6\u4e8b</p>';h+='<p class="note">'+pack[1]+'</p>';h+=quietPath?'<button class="button" id="goquiet">\u5f00\u59cb\u5b89\u9759\u89c2\u5bdf</button>':'<button class="button" id="goplay">\u5f00\u59cb\u4eca\u665a\u65b9\u6848</button>';if(n>0&&n<7)h+='<button class="button secondary" id="logbtn">\u65e9\u4e0a\u8bb0\u5f55</button>';h+='</div>';app.innerHTML=h;var gp=document.querySelector("#goplay");if(gp)gp.onclick=goPlay;var gq=document.querySelector("#goquiet");if(gq)gq.onclick=quiet;var lb=document.querySelector("#logbtn");if(lb)lb.onclick=log;}
+var oldHome=home,oldPlayer=player,oldQuiet=quiet,oldShow=showVerdict;
+home=function(){stopSound();if(state.verdict!=="switch"&&(state.nights||[]).length>=7&&!state.verdict){showVerdict();return;}if(state.verdict==="keep"||state.verdict==="stop"||state.triageCompleted){daily();return;}if(state.result&&!state.triageCompleted){result();return;}oldHome();};
+player=function(){oldPlayer();markStarted();};
+quiet=function(){var pack=COPY[state.result]||["\u4eca\u665a\u4e0d\u542f\u52a8\u58f0\u97f3","",false];var p1=state.a&&state.a.apnea==="yes";progress.textContent="\u8fdb\u884c\u4e2d";app.innerHTML='<div class="result"><div class="tag">\u4eca\u665a\u65b9\u6848\u5df2\u5f00\u59cb</div><h2>'+pack[0]+'</h2>'+(p1?'<div class="warning">\u5b89\u5168\u63d0\u793a\u4fdd\u6301\u6709\u6548\u3002\u4e0d\u63d0\u4f9b\u7528\u58f0\u97f3\u76d6\u4f4f\u9f3e\u58f0\u3002</div>':"")+'<p>\u4eca\u665a\u4e0d\u542f\u52a8\u58f0\u97f3\u3002</p><p class="small">\u628a\u624b\u673a\u653e\u4e0b\uff0c\u4fdd\u6301\u521a\u624d\u7684\u73af\u5883\u3002\u660e\u65e9\u518d\u8bb0\u5f55\u3002</p><button class="button" id="stop">\u4eca\u665a\u5148\u4f11\u606f</button></div>';document.querySelector("#stop").onclick=home;markStarted();};
+showVerdict=function(){oldShow();var v=verdictOf(state.nights);var btn=document.querySelector("#do");if(!btn)return;btn.onclick=function(){state.verdict=v;if(v==="keep"){state.triageCompleted=true;save();daily();}else if(v==="switch"){state.i=0;state.a={};state.result=null;state.headphones=false;state.triageCompleted=false;state.trialStatus=null;state.startedAt=null;save();ask();}else{state.result="SILENCE";state.triageCompleted=true;save();daily();}};};
+home();
 </script>
 </body>
 </html>
